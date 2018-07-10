@@ -1,0 +1,9 @@
+f = open("data/out07102018.txt","r")
+
+sep = '</ns3:local>'
+
+for i in xrange(16):
+    line = f.read(32063)
+    with open("xml/" + line[0:62],'w') as o_f:
+        o_f.write(line[62:].split(sep, 1)[0]) 
+        o_f.write(sep) 
